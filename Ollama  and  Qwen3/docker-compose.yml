@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  ollama:
+    build: .
+    container_name: ollama-qwen3
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+      - OLLAMA_ORIGINS=*
+    restart: unless-stopped
+
+volumes:
+  ollama_data:
