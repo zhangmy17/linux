@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  game:
+    build: .
+    container_name: guess-game
+    ports:
+      - "5001:5001"
+    restart: unless-stopped
