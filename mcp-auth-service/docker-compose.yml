@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  mcp-auth:
+    build: .
+    container_name: mcp-auth-service
+    ports:
+      - "5000:5000"
+    environment:
+      - SECRET_KEY=your-secret-key-12345
+    restart: unless-stopped
